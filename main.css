@@ -1,0 +1,268 @@
+:root {
+	color-scheme: light;
+	font-family: 'Manrope', 'Avenir Next', sans-serif;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	--ink: #202a29;
+	--muted: #697572;
+	--accent: #e66d50;
+	--rule: rgba(32, 42, 41, 0.16);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	overflow: hidden;
+	background: #edf0ea;
+	color: var(--ink);
+}
+
+#canvas-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 420px;
+	overflow: hidden;
+	isolation: isolate;
+	background-image: radial-gradient(rgba(49, 95, 96, 0.13) 0.7px, transparent 0.7px);
+	background-size: 20px 20px;
+}
+
+#canvas-container::after {
+	position: absolute;
+	z-index: -1;
+	inset: 0;
+	background: linear-gradient(90deg, rgba(237, 240, 234, 0.97) 0%, rgba(237, 240, 234, 0.78) 25%, rgba(237, 240, 234, 0) 58%);
+	content: '';
+	pointer-events: none;
+}
+
+canvas {
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	display: block;
+	width: 100%;
+	height: 100%;
+	touch-action: none;
+}
+
+.topbar,
+.control-bar {
+	position: absolute;
+	right: 6.2%;
+	left: 6.2%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.topbar {
+	top: 34px;
+	min-height: 34px;
+}
+
+.wordmark {
+	display: inline-flex;
+	align-items: center;
+	gap: 11px;
+	color: var(--ink);
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.11em;
+	text-decoration: none;
+}
+
+.wordmark-mark {
+	width: 20px;
+	height: 20px;
+	border: 1px solid var(--ink);
+	transform: rotate(45deg) scale(0.72);
+}
+
+.topbar-note,
+.eyebrow,
+.scene-index,
+.control-label {
+	font-family: 'DM Mono', monospace;
+	font-size: 10px;
+	font-weight: 400;
+	letter-spacing: 0.08em;
+}
+
+.topbar-note {
+	color: var(--muted);
+}
+
+.title-block {
+	position: absolute;
+	top: 29%;
+	left: 12.5%;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	margin: 0 0 21px;
+	color: var(--muted);
+}
+
+.live-dot,
+.control-indicator {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--accent);
+}
+
+h1 {
+	margin: 0;
+	font-size: 58px;
+	font-weight: 600;
+	line-height: 0.99;
+	letter-spacing: 0;
+}
+
+h1 span {
+	color: var(--accent);
+}
+
+.subtitle {
+	margin: 23px 0 0;
+	color: var(--muted);
+	font-size: 14px;
+	line-height: 1.8;
+}
+
+.scene-index {
+	position: absolute;
+	right: 6.2%;
+	bottom: 17%;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: var(--muted);
+}
+
+.scene-index span:first-child {
+	color: var(--ink);
+}
+
+.index-rule {
+	width: 40px;
+	height: 1px;
+	background: var(--rule);
+}
+
+.control-bar {
+	bottom: 31px;
+	min-height: 56px;
+	border-top: 1px solid var(--rule);
+}
+
+.control-label {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	color: var(--muted);
+}
+
+.control-indicator {
+	width: 6px;
+	height: 6px;
+	background: #477b77;
+	box-shadow: 0 0 0 3px rgba(71, 123, 119, 0.13);
+}
+
+button {
+	min-height: 36px;
+	padding: 0 14px;
+	border: 1px solid var(--rule);
+	border-radius: 3px;
+	background: rgba(248, 249, 246, 0.76);
+	color: var(--ink);
+	font: 600 11px 'Manrope', 'Avenir Next', sans-serif;
+	cursor: pointer;
+	transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+button:hover {
+	border-color: #477b77;
+	background: #f8f9f6;
+}
+
+button:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+	#canvas-container::after {
+		background: linear-gradient(180deg, rgba(237, 240, 234, 0.92) 0%, rgba(237, 240, 234, 0.62) 26%, rgba(237, 240, 234, 0) 54%);
+	}
+
+	.topbar,
+	.control-bar {
+		right: 22px;
+		left: 22px;
+	}
+
+	.topbar {
+		top: 20px;
+	}
+
+	.topbar-note {
+		font-size: 8px;
+	}
+
+	.title-block {
+		top: 17%;
+		left: 9%;
+	}
+
+	h1 {
+		font-size: 42px;
+	}
+
+	.eyebrow {
+		margin-bottom: 14px;
+		font-size: 9px;
+	}
+
+	.subtitle {
+		margin-top: 13px;
+		font-size: 12px;
+	}
+
+	.scene-index {
+		right: 22px;
+		bottom: 15%;
+		font-size: 9px;
+	}
+
+	.control-bar {
+		bottom: 14px;
+	}
+}
+
+@media (max-height: 600px) and (min-width: 701px) {
+	.title-block {
+		top: 24%;
+	}
+
+	h1 {
+		font-size: 48px;
+	}
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three.js | Rotating Cube</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./node_modules/three/build/three.module.js",
+        "three/addons/": "./node_modules/three/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <main id="canvas-container" aria-label="Interactive Three.js rotating cube scene">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Three.js example home">
+        <span class="wordmark-mark" aria-hidden="true"></span>
+        <span>OBJECT / 0</span>
+      </a>
+      <span class="topbar-note">A STUDY IN LIGHT & FORM</span>
+    </header>
+
+    <section class="title-block" aria-labelledby="scene-title">
+      <p class="eyebrow"><span class="live-dot"></span> THREE.JS / INTERACTIVE STUDY</p>
+      <h1 id="scene-title">A cube<br>in motion<span>.</span></h1>
+      <p class="subtitle">One form. A little light.<br>A place to begin.</p>
+    </section>
+
+    <div class="scene-index" aria-hidden="true">
+      <span>01</span>
+      <span class="index-rule"></span>
+      <span>ROTATION</span>
+    </div>
+
+    <footer class="control-bar">
+      <div class="control-label">
+        <span class="control-indicator" aria-hidden="true"></span>
+        <span>SCENE RUNNING</span>
+      </div>
+      <button id="rotation-toggle" type="button" aria-pressed="false">Pause rotation</button>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "orbiting_planet.3js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "python3 -m http.server ${PORT:-8000} --bind 0.0.0.0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gangadaril-code/orbiting_planet.3js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gangadaril-code/orbiting_planet.3js/issues"
+  },
+  "homepage": "https://github.com/gangadaril-code/orbiting_planet.3js#readme",
+  "dependencies": {
+    "three": "^0.186.1"
+  }
+}
